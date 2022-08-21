@@ -1,5 +1,6 @@
-import { AppBar, Grid, Toolbar, Typography } from "@mui/material"
+import { AppBar, Avatar, Box, Grid, Toolbar, Typography } from "@mui/material"
 import { Link } from "react-router-dom";
+import AvatarImg from "../../assets/map.png";
 
 const styles = {
   main: {
@@ -7,6 +8,11 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
+  box: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  }
 };
 
 const Header = () => {
@@ -17,7 +23,10 @@ const Header = () => {
           <Grid item lg={4} md={3} sm={0} xs={0} />
           <Grid container item lg={4} md={6} sm={12} xs={12} sx={styles.main}>
             <Link to="/" style={{ textDecoration: "none" }}>
-              <Typography>Thơ Thịnh Uyên</Typography>
+              <Box sx={styles.box}>
+                <Avatar alt="avatar" src={AvatarImg} sx={{ marginRight: "0.6rem" }} />
+                <Typography sx={{ fontWeight: "bold" }}>Thơ Thịnh Uyên</Typography>
+              </Box>
             </Link>
             <Link to="/new" style={{ textDecoration: "none" }}>
               <Typography>Bài mới</Typography>
