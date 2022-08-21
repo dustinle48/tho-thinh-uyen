@@ -17,6 +17,9 @@ const styles = {
     background: `url(${Background}) center no-repeat fixed`,
     backgroundSize: "cover",
     minHeight: "100vh",
+  },
+  main: {
+    padding: "0 5px",
   }
 };
 
@@ -44,7 +47,7 @@ function App() {
         <Header />
         <Grid container spacing={0} >
           <Grid item lg={4} md={3} sm={0} xs={0} />
-          <Grid item container spacing={0} lg={4} md={6} sm={12} xs={12} >
+          <Grid item container spacing={0} sx={styles.main} lg={4} md={6} sm={12} xs={12} >
             <Routes>
               <Route path="/" element={ <Home poems={poems} /> } />
               <Route path="/poem/:slug" element={ <PoemDisplayPage poems={poems} /> } />
